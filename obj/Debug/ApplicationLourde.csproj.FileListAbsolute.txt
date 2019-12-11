@@ -7,3 +7,12 @@ C:\Users\Corentin.B\Documents\Visual Studio 2019 Projets\ApplicationLourde\obj\D
 C:\Users\Corentin.B\Documents\Visual Studio 2019 Projets\ApplicationLourde\obj\Debug\ApplicationLourde.csproj.GenerateResource.cache
 C:\Users\Corentin.B\Documents\Visual Studio 2019 Projets\ApplicationLourde\obj\Debug\ApplicationLourde.exe
 C:\Users\Corentin.B\Documents\Visual Studio 2019 Projets\ApplicationLourde\obj\Debug\ApplicationLourde.pdb
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\ApplicationLourde.exe.config
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\ApplicationLourde.exe
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\ApplicationLourde.pdb
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.csprojAssemblyReference.cache
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.MainForm.resources
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.Properties.Resources.resources
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.csproj.GenerateResource.cache
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.exe
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.pdb
