@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
+
 namespace ApplicationLourde
 {
     public partial class MainForm : Form
@@ -11,9 +12,9 @@ namespace ApplicationLourde
             // Test connection serveur ?
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void Btn_login_Click(object sender, EventArgs e)
         {
-            
+            Login.Testco(textBox_user.Text, textBox_password.Text);   
         }
     }
 }

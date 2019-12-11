@@ -1,12 +1,13 @@
-﻿namespace ApplicationLourde
+﻿using System.Windows.Forms;
+
+namespace ApplicationLourde
 {
     class Login
     {
-        public bool Testco()
+        static public bool Testco(string user, string psw)
         {
             //Test co
-            if (true) {
-
+            if (!user.Contains(psw)) {
 
                 return true;
             }
