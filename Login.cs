@@ -7,11 +7,19 @@ namespace ApplicationLourde
         static public bool Testco(string user, string psw)
         {
             //Test co
-            if (!user.Contains(psw)) {
-
-                return true;
+            try
+            {
+                if (!user.Contains(psw))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else {
+            catch
+            {
                 return false;
             }
         }

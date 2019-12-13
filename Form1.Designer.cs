@@ -42,6 +42,7 @@
             this.Btn_gestionclientfacturation = new System.Windows.Forms.Button();
             this.Btn_gestionclientcom = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_connexion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_login.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             this.panel_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_login.Controls.Add(this.label_connexion);
             this.panel_login.Controls.Add(this.Btn_ordonnancementprod);
             this.panel_login.Controls.Add(this.Btn_planprod);
             this.panel_login.Controls.Add(this.Btn_gestionclientfacturation);
@@ -139,6 +141,7 @@
             this.Btn_ordonnancementprod.TabIndex = 9;
             this.Btn_ordonnancementprod.Text = "Ordonnancement Production";
             this.Btn_ordonnancementprod.UseVisualStyleBackColor = true;
+            this.Btn_ordonnancementprod.Click += new System.EventHandler(this.Btn_ordonnancementprod_Click);
             // 
             // Btn_planprod
             // 
@@ -149,6 +152,7 @@
             this.Btn_planprod.TabIndex = 8;
             this.Btn_planprod.Text = "Plan de production";
             this.Btn_planprod.UseVisualStyleBackColor = true;
+            this.Btn_planprod.Click += new System.EventHandler(this.Btn_planprod_Click);
             // 
             // Btn_gestionclientfacturation
             // 
@@ -159,6 +163,7 @@
             this.Btn_gestionclientfacturation.TabIndex = 7;
             this.Btn_gestionclientfacturation.Text = "Factures clients";
             this.Btn_gestionclientfacturation.UseVisualStyleBackColor = true;
+            this.Btn_gestionclientfacturation.Click += new System.EventHandler(this.Btn_gestionclientfacturation_Click);
             // 
             // Btn_gestionclientcom
             // 
@@ -169,6 +174,7 @@
             this.Btn_gestionclientcom.TabIndex = 6;
             this.Btn_gestionclientcom.Text = "Communication clients";
             this.Btn_gestionclientcom.UseVisualStyleBackColor = true;
+            this.Btn_gestionclientcom.Click += new System.EventHandler(this.Btn_gestionclientcom_Click);
             // 
             // panel1
             // 
@@ -178,6 +184,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(208, 371);
             this.panel1.TabIndex = 8;
+            // 
+            // label_connexion
+            // 
+            this.label_connexion.AutoSize = true;
+            this.label_connexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_connexion.ForeColor = System.Drawing.Color.Gray;
+            this.label_connexion.Location = new System.Drawing.Point(12, 97);
+            this.label_connexion.Name = "label_connexion";
+            this.label_connexion.Size = new System.Drawing.Size(68, 13);
+            this.label_connexion.TabIndex = 10;
+            this.label_connexion.Text = "Hors Ligne";
             // 
             // MainForm
             // 
@@ -217,6 +234,7 @@
         private System.Windows.Forms.Button Btn_gestionclientfacturation;
         private System.Windows.Forms.Button Btn_ordonnancementprod;
         private System.Windows.Forms.Button Btn_planprod;
+        private System.Windows.Forms.Label label_connexion;
     }
 }
 
