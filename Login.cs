@@ -6,11 +6,15 @@ namespace ApplicationLourde
     {
         static public bool Testco(string user, string psw)
         {
-            //Test co
+            //Try co
             try
             {
-                if (!user.Contains(psw))
+                string responseAPI = "test";
+                AppelAPI.Testc(user, psw);
+                if (responseAPI != null)
                 {
+                    MessageBox.Show(responseAPI);
+                    
                     return true;
                 }
                 else
