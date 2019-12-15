@@ -37,14 +37,19 @@
             this.label_motdepasse = new System.Windows.Forms.Label();
             this.listBox_donnees = new System.Windows.Forms.ListBox();
             this.panel_login = new System.Windows.Forms.Panel();
+            this.label_connexion = new System.Windows.Forms.Label();
             this.Btn_ordonnancementprod = new System.Windows.Forms.Button();
             this.Btn_planprod = new System.Windows.Forms.Button();
             this.Btn_gestionclientfacturation = new System.Windows.Forms.Button();
             this.Btn_gestionclientcom = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label_connexion = new System.Windows.Forms.Label();
+            this.Btn_commandesclient = new System.Windows.Forms.Button();
+            this.Btn_Changeplanprod = new System.Windows.Forms.Button();
+            this.Btn_Startprod = new System.Windows.Forms.Button();
+            this.Btn_Endprod = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_login.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox_Logo
@@ -120,7 +125,6 @@
             this.panel_login.Controls.Add(this.label_connexion);
             this.panel_login.Controls.Add(this.Btn_ordonnancementprod);
             this.panel_login.Controls.Add(this.Btn_planprod);
-            this.panel_login.Controls.Add(this.Btn_gestionclientfacturation);
             this.panel_login.Controls.Add(this.Btn_gestionclientcom);
             this.panel_login.Controls.Add(this.textBox_password);
             this.panel_login.Controls.Add(this.Btn_login);
@@ -132,59 +136,6 @@
             this.panel_login.Size = new System.Drawing.Size(179, 371);
             this.panel_login.TabIndex = 7;
             // 
-            // Btn_ordonnancementprod
-            // 
-            this.Btn_ordonnancementprod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_ordonnancementprod.Location = new System.Drawing.Point(12, 260);
-            this.Btn_ordonnancementprod.Name = "Btn_ordonnancementprod";
-            this.Btn_ordonnancementprod.Size = new System.Drawing.Size(154, 23);
-            this.Btn_ordonnancementprod.TabIndex = 9;
-            this.Btn_ordonnancementprod.Text = "Ordonnancement Production";
-            this.Btn_ordonnancementprod.UseVisualStyleBackColor = true;
-            this.Btn_ordonnancementprod.Click += new System.EventHandler(this.Btn_ordonnancementprod_Click);
-            // 
-            // Btn_planprod
-            // 
-            this.Btn_planprod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_planprod.Location = new System.Drawing.Point(12, 229);
-            this.Btn_planprod.Name = "Btn_planprod";
-            this.Btn_planprod.Size = new System.Drawing.Size(154, 23);
-            this.Btn_planprod.TabIndex = 8;
-            this.Btn_planprod.Text = "Plan de production";
-            this.Btn_planprod.UseVisualStyleBackColor = true;
-            this.Btn_planprod.Click += new System.EventHandler(this.Btn_planprod_Click);
-            // 
-            // Btn_gestionclientfacturation
-            // 
-            this.Btn_gestionclientfacturation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_gestionclientfacturation.Location = new System.Drawing.Point(12, 178);
-            this.Btn_gestionclientfacturation.Name = "Btn_gestionclientfacturation";
-            this.Btn_gestionclientfacturation.Size = new System.Drawing.Size(154, 23);
-            this.Btn_gestionclientfacturation.TabIndex = 7;
-            this.Btn_gestionclientfacturation.Text = "Factures clients";
-            this.Btn_gestionclientfacturation.UseVisualStyleBackColor = true;
-            this.Btn_gestionclientfacturation.Click += new System.EventHandler(this.Btn_gestionclientfacturation_Click);
-            // 
-            // Btn_gestionclientcom
-            // 
-            this.Btn_gestionclientcom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_gestionclientcom.Location = new System.Drawing.Point(12, 147);
-            this.Btn_gestionclientcom.Name = "Btn_gestionclientcom";
-            this.Btn_gestionclientcom.Size = new System.Drawing.Size(154, 23);
-            this.Btn_gestionclientcom.TabIndex = 6;
-            this.Btn_gestionclientcom.Text = "Communication clients";
-            this.Btn_gestionclientcom.UseVisualStyleBackColor = true;
-            this.Btn_gestionclientcom.Click += new System.EventHandler(this.Btn_gestionclientcom_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(413, 79);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 371);
-            this.panel1.TabIndex = 8;
-            // 
             // label_connexion
             // 
             this.label_connexion.AutoSize = true;
@@ -195,6 +146,108 @@
             this.label_connexion.Size = new System.Drawing.Size(68, 13);
             this.label_connexion.TabIndex = 10;
             this.label_connexion.Text = "Hors Ligne";
+            // 
+            // Btn_ordonnancementprod
+            // 
+            this.Btn_ordonnancementprod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ordonnancementprod.Location = new System.Drawing.Point(12, 227);
+            this.Btn_ordonnancementprod.Name = "Btn_ordonnancementprod";
+            this.Btn_ordonnancementprod.Size = new System.Drawing.Size(154, 38);
+            this.Btn_ordonnancementprod.TabIndex = 9;
+            this.Btn_ordonnancementprod.Text = "Ordonnancement de production";
+            this.Btn_ordonnancementprod.UseVisualStyleBackColor = true;
+            this.Btn_ordonnancementprod.Click += new System.EventHandler(this.Btn_ordonnancementprod_Click);
+            // 
+            // Btn_planprod
+            // 
+            this.Btn_planprod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_planprod.Location = new System.Drawing.Point(12, 187);
+            this.Btn_planprod.Name = "Btn_planprod";
+            this.Btn_planprod.Size = new System.Drawing.Size(154, 23);
+            this.Btn_planprod.TabIndex = 8;
+            this.Btn_planprod.Text = "Plan de production";
+            this.Btn_planprod.UseVisualStyleBackColor = true;
+            this.Btn_planprod.Click += new System.EventHandler(this.Btn_planprod_Click);
+            // 
+            // Btn_gestionclientfacturation
+            // 
+            this.Btn_gestionclientfacturation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_gestionclientfacturation.Location = new System.Drawing.Point(28, 65);
+            this.Btn_gestionclientfacturation.Name = "Btn_gestionclientfacturation";
+            this.Btn_gestionclientfacturation.Size = new System.Drawing.Size(154, 23);
+            this.Btn_gestionclientfacturation.TabIndex = 7;
+            this.Btn_gestionclientfacturation.Text = "Factures client";
+            this.Btn_gestionclientfacturation.UseVisualStyleBackColor = true;
+            this.Btn_gestionclientfacturation.Click += new System.EventHandler(this.Btn_gestionclientfacturation_Click);
+            // 
+            // Btn_gestionclientcom
+            // 
+            this.Btn_gestionclientcom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_gestionclientcom.Location = new System.Drawing.Point(12, 147);
+            this.Btn_gestionclientcom.Name = "Btn_gestionclientcom";
+            this.Btn_gestionclientcom.Size = new System.Drawing.Size(154, 23);
+            this.Btn_gestionclientcom.TabIndex = 6;
+            this.Btn_gestionclientcom.Text = "Clients";
+            this.Btn_gestionclientcom.UseVisualStyleBackColor = true;
+            this.Btn_gestionclientcom.Click += new System.EventHandler(this.Btn_gestionclientcom_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Btn_Endprod);
+            this.panel1.Controls.Add(this.Btn_Startprod);
+            this.panel1.Controls.Add(this.Btn_Changeplanprod);
+            this.panel1.Controls.Add(this.Btn_commandesclient);
+            this.panel1.Controls.Add(this.Btn_gestionclientfacturation);
+            this.panel1.Location = new System.Drawing.Point(413, 79);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 371);
+            this.panel1.TabIndex = 8;
+            // 
+            // Btn_commandesclient
+            // 
+            this.Btn_commandesclient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_commandesclient.Location = new System.Drawing.Point(28, 25);
+            this.Btn_commandesclient.Name = "Btn_commandesclient";
+            this.Btn_commandesclient.Size = new System.Drawing.Size(154, 23);
+            this.Btn_commandesclient.TabIndex = 8;
+            this.Btn_commandesclient.Text = "Commandes client";
+            this.Btn_commandesclient.UseVisualStyleBackColor = true;
+            this.Btn_commandesclient.Click += new System.EventHandler(this.Btn_commandesclient_Click);
+            // 
+            // Btn_Changeplanprod
+            // 
+            this.Btn_Changeplanprod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Changeplanprod.Location = new System.Drawing.Point(28, 105);
+            this.Btn_Changeplanprod.Name = "Btn_Changeplanprod";
+            this.Btn_Changeplanprod.Size = new System.Drawing.Size(154, 23);
+            this.Btn_Changeplanprod.TabIndex = 9;
+            this.Btn_Changeplanprod.Text = "Changer plan de production";
+            this.Btn_Changeplanprod.UseVisualStyleBackColor = true;
+            this.Btn_Changeplanprod.Click += new System.EventHandler(this.Btn_Changeplanprod_Click);
+            // 
+            // Btn_Startprod
+            // 
+            this.Btn_Startprod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Startprod.Location = new System.Drawing.Point(28, 145);
+            this.Btn_Startprod.Name = "Btn_Startprod";
+            this.Btn_Startprod.Size = new System.Drawing.Size(154, 23);
+            this.Btn_Startprod.TabIndex = 10;
+            this.Btn_Startprod.Text = "Commencer la production";
+            this.Btn_Startprod.UseVisualStyleBackColor = true;
+            this.Btn_Startprod.Click += new System.EventHandler(this.Btn_Startprod_Click);
+            // 
+            // Btn_Endprod
+            // 
+            this.Btn_Endprod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Endprod.Location = new System.Drawing.Point(28, 185);
+            this.Btn_Endprod.Name = "Btn_Endprod";
+            this.Btn_Endprod.Size = new System.Drawing.Size(154, 23);
+            this.Btn_Endprod.TabIndex = 11;
+            this.Btn_Endprod.Text = "Finir la production";
+            this.Btn_Endprod.UseVisualStyleBackColor = true;
+            this.Btn_Endprod.Click += new System.EventHandler(this.Btn_Endprod_Click);
             // 
             // MainForm
             // 
@@ -215,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).EndInit();
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -235,6 +289,10 @@
         private System.Windows.Forms.Button Btn_ordonnancementprod;
         private System.Windows.Forms.Button Btn_planprod;
         private System.Windows.Forms.Label label_connexion;
+        private System.Windows.Forms.Button Btn_commandesclient;
+        private System.Windows.Forms.Button Btn_Endprod;
+        private System.Windows.Forms.Button Btn_Startprod;
+        private System.Windows.Forms.Button Btn_Changeplanprod;
     }
 }
 

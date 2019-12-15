@@ -32,3 +32,5 @@ C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\System.Numeri
 C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Debug\ApplicationLourde.csproj.CopyComplete
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\RestSharp.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Debug\RestSharp.xml

@@ -1,26 +1,21 @@
-﻿using System.Windows.Forms;
-
-namespace ApplicationLourde
+﻿namespace ApplicationLourde
 {
     class Login
     {
-        static public bool Testco(string user, string psw)
+        static public bool TryLogin(string user, string psw)
         {
-            //Try co
+            //Try connexion
             try
             {
-                string responseAPI = "test";
-                AppelAPI.Testc(user, psw);
-                if (responseAPI != null)
+                AppelAPI AppelAPI = new AppelAPI();
+                string responseAPI = AppelAPI.Login(user, psw);
+
+                if (responseAPI != "Error")
                 {
-                    MessageBox.Show(responseAPI);
-                    
                     return true;
                 }
                 else
-                {
                     return false;
-                }
             }
             catch
             {
