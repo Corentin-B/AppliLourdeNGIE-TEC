@@ -50,7 +50,7 @@
             }
         }
 
-        public static string Commandes(string client)
+        public static string Commandes(int client)
         {
             AppelAPI AppelAPI = new AppelAPI();
 
@@ -66,11 +66,11 @@
             }
         }
 
-        public static string Factures(string client)
+        public static string Factures()
         {
             AppelAPI AppelAPI = new AppelAPI();
 
-            string responseAPI = AppelAPI.Factures(client);
+            string responseAPI = AppelAPI.Factures();
 
             if (responseAPI != null)
             {
@@ -82,7 +82,7 @@
             }
         }
 
-        public static string FacturesPaye(string client)
+        public static string FacturesPaye(int client)
         {
             AppelAPI AppelAPI = new AppelAPI();
 
@@ -98,11 +98,11 @@
             }
         }
 
-        public static string Planprod(string prod, string plan)
+        public static string ChangePlanprod(int prod, string plan)
         {
             AppelAPI AppelAPI = new AppelAPI();
 
-            string responseAPI = AppelAPI.Planprod(prod, plan);
+            string responseAPI = AppelAPI.ChangePlanprod(prod, plan);
 
             if (responseAPI != null)
             {
@@ -114,11 +114,11 @@
             }
         }
 
-        public static string StartProd(string prod)
+        public static string StartProd(int prod)
         {
             AppelAPI AppelAPI = new AppelAPI();
 
-            string responseAPI = AppelAPI.Startprod(prod);
+            string responseAPI = AppelAPI.StartProd(prod);
 
             if (responseAPI != null)
             {
@@ -130,11 +130,11 @@
             }
         }
 
-        public static string Stopprod(string prod)
+        public static string StopProd(int prod)
         {
             AppelAPI AppelAPI = new AppelAPI();
 
-            string responseAPI = AppelAPI.Endprod(prod);
+            string responseAPI = AppelAPI.StopProd(prod);
 
             if (responseAPI != null)
             {

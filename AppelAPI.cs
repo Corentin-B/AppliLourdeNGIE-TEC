@@ -34,7 +34,7 @@ namespace ApplicationLourde
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+            var responseString = UnicodeEncoding.UTF8.GetString(data);            
 
             return responseString;
         }
@@ -65,13 +65,13 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string Commandes(string client)
+        public string Commandes(int client)
         {
             string url = MainUrl + "/commandes";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("client", client);
+            wclient.QueryString.Add("client", client.ToString());
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
             var responseString = UnicodeEncoding.UTF8.GetString(data);
@@ -79,13 +79,14 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string Factures(string client)
+        public string Factures()
         {
             string url = MainUrl + "/factures";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("client", client);
+
+            Console.WriteLine(wclient.ToString());
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
             var responseString = UnicodeEncoding.UTF8.GetString(data);
@@ -93,14 +94,17 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string FacturesPaye(string client)
+        public string FacturesPaye(int client)
         {
+            Console.WriteLine("FacturesPaye");
             string url = MainUrl + "/facturespaye";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("client", client);
+            wclient.QueryString.Add("client", client.ToString());
             wclient.QueryString.Add("paye", "1");
+
+            Console.WriteLine(client);
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
             var responseString = UnicodeEncoding.UTF8.GetString(data);
@@ -108,13 +112,13 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string Planprod(string prod, string plan)
+        public string ChangePlanprod(int prod, string plan)
         {
-            string url = MainUrl + "/planprod";
+            string url = MainUrl + "/changeplanprod";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("prod", prod);
+            wclient.QueryString.Add("produit", prod.ToString());
             wclient.QueryString.Add("plan", plan);
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
@@ -123,15 +127,14 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string Startprod(string prod)
+        public string StartProd(int prod)
         {
             string url = MainUrl + "/startprod";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("prod", prod);
+            wclient.QueryString.Add("prod", prod.ToString());
             wclient.QueryString.Add("date", DateTime.Now.ToString());
-
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);
             var responseString = UnicodeEncoding.UTF8.GetString(data);
@@ -139,13 +142,13 @@ namespace ApplicationLourde
             return responseString;
         }
 
-        public string Endprod(string prod)
+        public string StopProd(int prod)
         {
             string url = MainUrl + "/endprod";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("prod", prod);
+            wclient.QueryString.Add("prod", prod.ToString());
             wclient.QueryString.Add("date", DateTime.Now.ToString());
 
             var data = wclient.UploadValues(url, "POST", wclient.QueryString);

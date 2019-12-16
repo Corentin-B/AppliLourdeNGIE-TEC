@@ -1,6 +1,8 @@
 ﻿using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -21,6 +23,8 @@ namespace ApplicationLourde
             Btn_Changeplanprod.Enabled = false;
             Btn_Startprod.Enabled = false;
             Btn_Endprod.Enabled = false;
+            textBox_plan.Enabled = false;
+            Btn_facturepaye.Enabled = false;
         }
 
         //LOGIN
@@ -62,10 +66,20 @@ namespace ApplicationLourde
             Btn_Changeplanprod.Enabled = false;
             Btn_Startprod.Enabled = false;
             Btn_Endprod.Enabled = false;
+            label_sql.Visible = false;
+            textBox_plan.Enabled = false;
+            Btn_facturepaye.Enabled = false;
+
+
+            var response = JArray.Parse(CallMenu.Client());
 
             listBox_donnees.Items.Clear();
 
-            listBox_donnees.Items.Add(CallMenu.Client());
+            foreach (object i in response)
+            {
+                var replace = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                listBox_donnees.Items.Add(replace);
+            }
 
             Btn_commandesclient.Enabled = true;
             Btn_gestionclientfacturation.Enabled = true;
@@ -86,21 +100,25 @@ namespace ApplicationLourde
             Btn_Changeplanprod.Enabled = false;
             Btn_Startprod.Enabled = false;
             Btn_Endprod.Enabled = false;
+            label_sql.Visible = false;
+            Btn_facturepaye.Enabled = false;
 
-            if (true /*CallApi*/)
-            {
-                //AppelAPI
-                Btn_planprod.Enabled = true;
-            }
-            else
-            {
 
+            var response = JArray.Parse(CallMenu.Listplan());
+
+            listBox_donnees.Items.Clear();
+
+            foreach (object i in response)
+            {
+                var replace = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                listBox_donnees.Items.Add(replace);
             }
 
             Btn_gestionclientcom.Enabled = true;
             Btn_planprod.Enabled = true;
             Btn_ordonnancementprod.Enabled = true;
             Btn_Changeplanprod.Enabled = true;
+            textBox_plan.Enabled = true;
         }
 
         //ORDENANCEMENT DE PRODUTCION
@@ -114,16 +132,20 @@ namespace ApplicationLourde
             Btn_Changeplanprod.Enabled = false;
             Btn_Startprod.Enabled = false;
             Btn_Endprod.Enabled = false;
+            label_sql.Visible = false;
+            textBox_plan.Enabled = false;
+            textBox_plan.Enabled = false;
+            Btn_facturepaye.Enabled = false;
 
-            if (true /*CallApi*/)
-            {
-                //AppelAPI
-                Btn_Startprod.Enabled = true;
-                Btn_Endprod.Enabled = true;
-            }
-            else
-            {
 
+            var response = JArray.Parse(CallMenu.Ordoprod());
+
+            listBox_donnees.Items.Clear();
+
+            foreach (object i in response)
+            {
+                var replace = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                listBox_donnees.Items.Add(replace);
             }
 
             Btn_gestionclientcom.Enabled = true;
@@ -131,6 +153,41 @@ namespace ApplicationLourde
             Btn_ordonnancementprod.Enabled = true;
             Btn_Startprod.Enabled = true;
             Btn_Endprod.Enabled = true;
+        }
+
+        //CLIENT - COMMANDES
+        private void Btn_commandesclient_Click(object sender, EventArgs e)
+        {
+            if (listBox_donnees.SelectedIndex != -1)
+            {
+                Btn_gestionclientcom.Enabled = false;
+                Btn_ordonnancementprod.Enabled = false;
+                Btn_planprod.Enabled = false;
+                Btn_commandesclient.Enabled = false;
+                Btn_gestionclientfacturation.Enabled = false;
+                Btn_Changeplanprod.Enabled = false;
+                Btn_Startprod.Enabled = false;
+                Btn_Endprod.Enabled = false;
+                label_sql.Visible = false;
+                textBox_plan.Enabled = false;
+                Btn_facturepaye.Enabled = false;
+
+
+                int index = listBox_donnees.SelectedIndex + 1;
+                var response = JArray.Parse(CallMenu.Commandes(index));
+
+                listBox_donnees.Items.Clear();
+
+                foreach (object i in response)
+                {
+                    var replace = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                    listBox_donnees.Items.Add(replace);
+                }
+
+                Btn_gestionclientcom.Enabled = true;
+                Btn_planprod.Enabled = true;
+                Btn_ordonnancementprod.Enabled = true;
+            }
         }
 
         //CLIENT - FACTURATION
@@ -144,135 +201,203 @@ namespace ApplicationLourde
             Btn_Changeplanprod.Enabled = false;
             Btn_Startprod.Enabled = false;
             Btn_Endprod.Enabled = false;
+            label_sql.Visible = false;
+            textBox_plan.Enabled = false;
+            Btn_facturepaye.Enabled = false;
 
 
-            if (true /*CallApi*/)
+            var response = JArray.Parse(CallMenu.Factures());
+
+            listBox_donnees.Items.Clear();
+
+            foreach (object i in response)
             {
-                //AppelAPI
-            }
-            else
-            {
+                var replace = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                replace = replace.Replace("EstPaye : 1", "EstPaye: Oui").Replace("EstPaye : 0", "EstPaye: Non");
 
+                listBox_donnees.Items.Add(replace);
             }
 
             Btn_gestionclientcom.Enabled = true;
             Btn_planprod.Enabled = true;
             Btn_ordonnancementprod.Enabled = true;
-            Btn_commandesclient.Enabled = true;
-            Btn_gestionclientfacturation.Enabled = true;
+            textBox_plan.Enabled = true;
+            Btn_facturepaye.Enabled = true;
         }
 
-        //CLIENT - COMMANDES
-        private void Btn_commandesclient_Click(object sender, EventArgs e)
+        //CLIENT - FACTURE PAYEE
+        private void Btn_facturepaye_Click(object sender, EventArgs e)
         {
-            Btn_gestionclientcom.Enabled = false;
-            Btn_ordonnancementprod.Enabled = false;
-            Btn_planprod.Enabled = false;
-            Btn_commandesclient.Enabled = false;
-            Btn_gestionclientfacturation.Enabled = false;
-            Btn_Changeplanprod.Enabled = false;
-            Btn_Startprod.Enabled = false;
-            Btn_Endprod.Enabled = false;
-
-
-            if (true /*CallApi*/)
+            if (listBox_donnees.SelectedIndex != -1)
             {
-                //AppelAPI
-            }
-            else
-            {
+                Btn_gestionclientcom.Enabled = false;
+                Btn_ordonnancementprod.Enabled = false;
+                Btn_planprod.Enabled = false;
+                Btn_commandesclient.Enabled = false;
+                Btn_gestionclientfacturation.Enabled = false;
+                Btn_Changeplanprod.Enabled = false;
+                Btn_Startprod.Enabled = false;
+                Btn_Endprod.Enabled = false;
+                label_sql.Visible = false;
+                textBox_plan.Enabled = false;
 
-            }
 
-            Btn_gestionclientcom.Enabled = true;
-            Btn_planprod.Enabled = true;
-            Btn_ordonnancementprod.Enabled = true;
-            Btn_commandesclient.Enabled = true;
-            Btn_gestionclientfacturation.Enabled = true;
+                int index = listBox_donnees.SelectedIndex + 1;
+                string response = CallMenu.FacturesPaye(index);
+
+                if (response == "Success")
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Success";
+                    label_sql.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Error";
+                    label_sql.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Btn_gestionclientcom.Enabled = true;
+                Btn_planprod.Enabled = true;
+                Btn_ordonnancementprod.Enabled = true;
+            }
         }
 
         //PLAN - CHANGEMENT PROD
         private void Btn_Changeplanprod_Click(object sender, EventArgs e)
         {
-            Btn_gestionclientcom.Enabled = false;
-            Btn_ordonnancementprod.Enabled = false;
-            Btn_planprod.Enabled = false;
-            Btn_commandesclient.Enabled = false;
-            Btn_gestionclientfacturation.Enabled = false;
-            Btn_Changeplanprod.Enabled = false;
-            Btn_Startprod.Enabled = false;
-            Btn_Endprod.Enabled = false;
-
-            if (true /*CallApi*/)
+            if (listBox_donnees.SelectedIndex != -1)
             {
-                //AppelAPI
+                Btn_gestionclientcom.Enabled = false;
+                Btn_ordonnancementprod.Enabled = false;
+                Btn_planprod.Enabled = false;
+                Btn_commandesclient.Enabled = false;
+                Btn_gestionclientfacturation.Enabled = false;
+                Btn_Changeplanprod.Enabled = false;
+                Btn_Startprod.Enabled = false;
+                Btn_Endprod.Enabled = false;
+                label_sql.Visible = false;
+                textBox_plan.Enabled = false;
+                Btn_facturepaye.Enabled = false;
+
+
+                int index = listBox_donnees.SelectedIndex + 1;
+                var response = CallMenu.ChangePlanprod(index, textBox_plan.Text);
+
+                if (response == "Success")
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Success";
+                    label_sql.ForeColor = System.Drawing.Color.Green;
+
+                    var response2 = JArray.Parse(CallMenu.Listplan());
+
+                    listBox_donnees.Items.Clear();
+
+                    foreach (object i in response2)
+                    {
+                        var replace2 = i.ToString().Replace('{', ' ').Replace('"', ' ').Replace('}', ' ');
+                        listBox_donnees.Items.Add(replace2);
+                    }
+                }
+                else
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Error";
+                    label_sql.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Btn_gestionclientcom.Enabled = true;
+                Btn_planprod.Enabled = true;
+                Btn_ordonnancementprod.Enabled = true;
+                Btn_Changeplanprod.Enabled = true;
+                textBox_plan.Enabled = true;
             }
-            else
-            {
-
-            }
-
-            Btn_gestionclientcom.Enabled = true;
-            Btn_planprod.Enabled = true;
-            Btn_ordonnancementprod.Enabled = true;
-            Btn_Changeplanprod.Enabled = true;
-
         }
 
         //ORDENANCEMENT - START
         private void Btn_Startprod_Click(object sender, EventArgs e)
         {
-            Btn_gestionclientcom.Enabled = false;
-            Btn_ordonnancementprod.Enabled = false;
-            Btn_planprod.Enabled = false;
-            Btn_commandesclient.Enabled = false;
-            Btn_gestionclientfacturation.Enabled = false;
-            Btn_Changeplanprod.Enabled = false;
-            Btn_Startprod.Enabled = false;
-            Btn_Endprod.Enabled = false;
-
-            if (true /*CallApi*/)
+            if (listBox_donnees.SelectedIndex != -1)
             {
-                //AppelAPI
-            }
-            else
-            {
+                Btn_gestionclientcom.Enabled = false;
+                Btn_ordonnancementprod.Enabled = false;
+                Btn_planprod.Enabled = false;
+                Btn_commandesclient.Enabled = false;
+                Btn_gestionclientfacturation.Enabled = false;
+                Btn_Changeplanprod.Enabled = false;
+                Btn_Startprod.Enabled = false;
+                Btn_Endprod.Enabled = false;
+                label_sql.Visible = false;
+                textBox_plan.Enabled = false;
+                Btn_facturepaye.Enabled = false;
 
-            }
 
-            Btn_gestionclientcom.Enabled = true;
-            Btn_planprod.Enabled = true;
-            Btn_ordonnancementprod.Enabled = true;
-            Btn_Startprod.Enabled = true;
-            Btn_Endprod.Enabled = true;
+                int index = listBox_donnees.SelectedIndex + 1;
+                string response = CallMenu.StartProd(index);
+
+                if (response == "Success")
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Success";
+                    label_sql.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Error";
+                    label_sql.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Btn_gestionclientcom.Enabled = true;
+                Btn_planprod.Enabled = true;
+                Btn_ordonnancementprod.Enabled = true;
+                Btn_Startprod.Enabled = true;
+                Btn_Endprod.Enabled = true;
+            }
         }
 
         //ORDENANCEMENT - STOP
         private void Btn_Endprod_Click(object sender, EventArgs e)
         {
-            Btn_gestionclientcom.Enabled = false;
-            Btn_ordonnancementprod.Enabled = false;
-            Btn_planprod.Enabled = false;
-            Btn_commandesclient.Enabled = false;
-            Btn_gestionclientfacturation.Enabled = false;
-            Btn_Changeplanprod.Enabled = false;
-            Btn_Startprod.Enabled = false;
-            Btn_Endprod.Enabled = false;
-
-            if (true /*CallApi*/)
+            if (listBox_donnees.SelectedIndex != -1)
             {
-                //AppelAPI
-            }
-            else
-            {
+                Btn_gestionclientcom.Enabled = false;
+                Btn_ordonnancementprod.Enabled = false;
+                Btn_planprod.Enabled = false;
+                Btn_commandesclient.Enabled = false;
+                Btn_gestionclientfacturation.Enabled = false;
+                Btn_Changeplanprod.Enabled = false;
+                Btn_Startprod.Enabled = false;
+                Btn_Endprod.Enabled = false;
+                label_sql.Visible = false;
+                textBox_plan.Enabled = false;
+                Btn_facturepaye.Enabled = false;
 
-            }
 
-            Btn_gestionclientcom.Enabled = true;
-            Btn_planprod.Enabled = true;
-            Btn_ordonnancementprod.Enabled = true;
-            Btn_Startprod.Enabled = true;
-            Btn_Endprod.Enabled = true;
+                int index = listBox_donnees.SelectedIndex + 1;
+                string response = CallMenu.StopProd(index);
+
+                if (response == "Success")
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Success";
+                    label_sql.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    label_sql.Visible = true;
+                    label_sql.Text = "Error";
+                    label_sql.ForeColor = System.Drawing.Color.Red;
+                }
+
+                Btn_gestionclientcom.Enabled = true;
+                Btn_planprod.Enabled = true;
+                Btn_ordonnancementprod.Enabled = true;
+                Btn_Startprod.Enabled = true;
+                Btn_Endprod.Enabled = true;
+            }
         }
     }
 }

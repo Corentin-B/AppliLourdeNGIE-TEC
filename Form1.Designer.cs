@@ -47,6 +47,9 @@
             this.Btn_Startprod = new System.Windows.Forms.Button();
             this.Btn_Changeplanprod = new System.Windows.Forms.Button();
             this.Btn_commandesclient = new System.Windows.Forms.Button();
+            this.label_sql = new System.Windows.Forms.Label();
+            this.textBox_plan = new System.Windows.Forms.TextBox();
+            this.Btn_facturepaye = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_login.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -113,8 +116,10 @@
             this.listBox_donnees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBox_donnees.Dock = System.Windows.Forms.DockStyle.Left;
             this.listBox_donnees.FormattingEnabled = true;
+            this.listBox_donnees.HorizontalScrollbar = true;
             this.listBox_donnees.Location = new System.Drawing.Point(0, 79);
             this.listBox_donnees.Name = "listBox_donnees";
+            this.listBox_donnees.ScrollAlwaysVisible = true;
             this.listBox_donnees.Size = new System.Drawing.Size(413, 371);
             this.listBox_donnees.TabIndex = 6;
             // 
@@ -195,6 +200,9 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Btn_facturepaye);
+            this.panel1.Controls.Add(this.textBox_plan);
+            this.panel1.Controls.Add(this.label_sql);
             this.panel1.Controls.Add(this.Btn_Endprod);
             this.panel1.Controls.Add(this.Btn_Startprod);
             this.panel1.Controls.Add(this.Btn_Changeplanprod);
@@ -208,7 +216,7 @@
             // Btn_Endprod
             // 
             this.Btn_Endprod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Endprod.Location = new System.Drawing.Point(28, 185);
+            this.Btn_Endprod.Location = new System.Drawing.Point(28, 265);
             this.Btn_Endprod.Name = "Btn_Endprod";
             this.Btn_Endprod.Size = new System.Drawing.Size(154, 23);
             this.Btn_Endprod.TabIndex = 11;
@@ -219,7 +227,7 @@
             // Btn_Startprod
             // 
             this.Btn_Startprod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Startprod.Location = new System.Drawing.Point(28, 145);
+            this.Btn_Startprod.Location = new System.Drawing.Point(28, 225);
             this.Btn_Startprod.Name = "Btn_Startprod";
             this.Btn_Startprod.Size = new System.Drawing.Size(154, 23);
             this.Btn_Startprod.TabIndex = 10;
@@ -230,7 +238,7 @@
             // Btn_Changeplanprod
             // 
             this.Btn_Changeplanprod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Changeplanprod.Location = new System.Drawing.Point(28, 105);
+            this.Btn_Changeplanprod.Location = new System.Drawing.Point(28, 145);
             this.Btn_Changeplanprod.Name = "Btn_Changeplanprod";
             this.Btn_Changeplanprod.Size = new System.Drawing.Size(154, 23);
             this.Btn_Changeplanprod.TabIndex = 9;
@@ -248,6 +256,36 @@
             this.Btn_commandesclient.Text = "Commandes client";
             this.Btn_commandesclient.UseVisualStyleBackColor = true;
             this.Btn_commandesclient.Click += new System.EventHandler(this.Btn_commandesclient_Click);
+            // 
+            // label_sql
+            // 
+            this.label_sql.AutoSize = true;
+            this.label_sql.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_sql.ForeColor = System.Drawing.Color.Green;
+            this.label_sql.Location = new System.Drawing.Point(67, 305);
+            this.label_sql.Name = "label_sql";
+            this.label_sql.Size = new System.Drawing.Size(68, 17);
+            this.label_sql.TabIndex = 11;
+            this.label_sql.Text = "Success";
+            this.label_sql.Visible = false;
+            // 
+            // textBox_plan
+            // 
+            this.textBox_plan.Location = new System.Drawing.Point(28, 185);
+            this.textBox_plan.Name = "textBox_plan";
+            this.textBox_plan.Size = new System.Drawing.Size(154, 20);
+            this.textBox_plan.TabIndex = 11;
+            // 
+            // Btn_facturepaye
+            // 
+            this.Btn_facturepaye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_facturepaye.Location = new System.Drawing.Point(28, 105);
+            this.Btn_facturepaye.Name = "Btn_facturepaye";
+            this.Btn_facturepaye.Size = new System.Drawing.Size(154, 23);
+            this.Btn_facturepaye.TabIndex = 12;
+            this.Btn_facturepaye.Text = "Factures Payée";
+            this.Btn_facturepaye.UseVisualStyleBackColor = true;
+            this.Btn_facturepaye.Click += new System.EventHandler(this.Btn_facturepaye_Click);
             // 
             // MainForm
             // 
@@ -269,6 +307,7 @@
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -293,6 +332,9 @@
         private System.Windows.Forms.Button Btn_Endprod;
         private System.Windows.Forms.Button Btn_Startprod;
         private System.Windows.Forms.Button Btn_Changeplanprod;
+        private System.Windows.Forms.Label label_sql;
+        private System.Windows.Forms.TextBox textBox_plan;
+        private System.Windows.Forms.Button Btn_facturepaye;
     }
 }
 
