@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Build.Tasks.Deployment.Bootstrapper;
+using Newtonsoft.Json;
+using System;
 using System.Windows.Forms;
 
 
@@ -204,7 +206,6 @@ namespace ApplicationLourde
             if (true /*CallApi*/)
             {
                 //AppelAPI
-                Btn_planprod.Enabled = true;
             }
             else
             {
@@ -214,7 +215,8 @@ namespace ApplicationLourde
             Btn_gestionclientcom.Enabled = true;
             Btn_planprod.Enabled = true;
             Btn_ordonnancementprod.Enabled = true;
-            Btn_planprod.Enabled = true;
+            Btn_Changeplanprod.Enabled = true;
+
         }
 
         //ORDENANCEMENT - START
@@ -232,8 +234,6 @@ namespace ApplicationLourde
             if (true /*CallApi*/)
             {
                 //AppelAPI
-                Btn_Startprod.Enabled = true;
-                Btn_Endprod.Enabled = true;
             }
             else
             {
@@ -262,8 +262,6 @@ namespace ApplicationLourde
             if (true /*CallApi*/)
             {
                 //AppelAPI
-                Btn_Startprod.Enabled = true;
-                Btn_Endprod.Enabled = true;
             }
             else
             {
