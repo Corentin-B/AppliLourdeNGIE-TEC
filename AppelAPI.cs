@@ -4,157 +4,232 @@ using System.Text;
 
 namespace ApplicationLourde
 {
+
     class AppelAPI
     {
+        private String[] Logs = new String[2];
 
-        private static string MainUrl = "http://localhost:3000";
+        private static string MainUrl = "http://api.ngie-tec.local";
 
         public string Login(string user, string password)
         {
-            string url = MainUrl + "/Login";
+            string url = MainUrl + "/login";
             WebClient wclient = new WebClient();
 
             wclient.QueryString.Add("user", user);
             wclient.QueryString.Add("password", password);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+            try
+            {
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            Console.WriteLine(responseString);
-            Properties.Settings.Default.Token = responseString;
+                //Properties.Settings.Default.user = responseString;
 
-            return responseString;
+                if (responseString == "Success")
+                {
+                    // Properties.Settings.Default.token = responseString;
+                }
+                return responseString;
+            }
+            catch (WebException e)
+            {
+                return "Error";
+            }
         }
 
         public string Client()
         {
-            string url = MainUrl + "/clients";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/clients";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);            
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string Listplanprod()
         {
-            string url = MainUrl + "/listplan";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/listplan";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string Ordoprod()
         {
-            string url = MainUrl + "/ordoprod";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/ordoprod";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string Commandes(int client)
         {
-            string url = MainUrl + "/commandes";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/commandes";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("client", client.ToString());
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
+                wclient.QueryString.Add("client", client.ToString());
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string Factures()
         {
-            string url = MainUrl + "/factures";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/factures";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
 
-            Console.WriteLine(wclient.ToString());
+                Console.WriteLine(wclient.ToString());
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string FacturesPaye(int client)
         {
-            Console.WriteLine("FacturesPaye");
-            string url = MainUrl + "/facturespaye";
-            WebClient wclient = new WebClient();
+            try
+            {
+                Console.WriteLine("FacturesPaye");
+                string url = MainUrl + "/facturespaye";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("client", client.ToString());
-            wclient.QueryString.Add("paye", "1");
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
+                wclient.QueryString.Add("client", client.ToString());
+                wclient.QueryString.Add("paye", "1");
 
-            Console.WriteLine(client);
+                Console.WriteLine(client);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string ChangePlanprod(int prod, string plan)
         {
-            string url = MainUrl + "/changeplanprod";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/changeplanprod";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("produit", prod.ToString());
-            wclient.QueryString.Add("plan", plan);
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
+                wclient.QueryString.Add("produit", prod.ToString());
+                wclient.QueryString.Add("plan", plan);
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string StartProd(int prod)
         {
-            string url = MainUrl + "/startprod";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/startprod";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("prod", prod.ToString());
-            wclient.QueryString.Add("date", DateTime.Now.ToString());
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
+                wclient.QueryString.Add("prod", prod.ToString());
+                wclient.QueryString.Add("date", DateTime.Now.ToString());
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
 
         public string StopProd(int prod)
         {
-            string url = MainUrl + "/endprod";
-            WebClient wclient = new WebClient();
+            try
+            {
+                string url = MainUrl + "/endprod";
+                WebClient wclient = new WebClient();
 
-            wclient.QueryString.Add("token", Properties.Settings.Default.Token);
-            wclient.QueryString.Add("prod", prod.ToString());
-            wclient.QueryString.Add("date", DateTime.Now.ToString());
+                wclient.QueryString.Add("token", Properties.Settings.Default.user);
+                wclient.QueryString.Add("prod", prod.ToString());
+                wclient.QueryString.Add("date", DateTime.Now.ToString());
 
-            var data = wclient.UploadValues(url, "POST", wclient.QueryString);
-            var responseString = UnicodeEncoding.UTF8.GetString(data);
+                var data = wclient.UploadValues(url, "POST", wclient.QueryString);
+                var responseString = UnicodeEncoding.UTF8.GetString(data);
 
-            return responseString;
+                return responseString;
+            }
+            catch (WebException)
+            {
+                return "Error";
+            }
         }
     }
 }

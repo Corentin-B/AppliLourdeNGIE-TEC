@@ -10,7 +10,7 @@
                 AppelAPI AppelAPI = new AppelAPI();
                 string responseAPI = AppelAPI.Login(user, psw);
 
-                if (responseAPI != "Error")
+                if (responseAPI == "Success")
                 {
                     return true;
                 }

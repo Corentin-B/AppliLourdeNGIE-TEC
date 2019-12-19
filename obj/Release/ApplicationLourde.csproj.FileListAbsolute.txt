@@ -1,0 +1,32 @@
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\IdentityModel.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Newtonsoft.Json.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\RestSharp.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Buffers.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Memory.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Text.Encodings.Web.dll
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\IdentityModel.pdb
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\IdentityModel.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Newtonsoft.Json.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\RestSharp.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Buffers.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Memory.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Numerics.Vectors.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\System.Text.Encodings.Web.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\ApplicationLourde.csprojAssemblyReference.cache
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\ApplicationLourde.MainForm.resources
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\ApplicationLourde.Properties.Resources.resources
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\ApplicationLourde.csproj.GenerateResource.cache
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\ApplicationLourde.csproj.CopyComplete
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Application NGIE-TEC.exe.config
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Application NGIE-TEC.exe.manifest
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Application NGIE-TEC.application
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Application NGIE-TEC.exe
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\bin\Release\Application NGIE-TEC.pdb
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\Application NGIE-TEC.TrustInfo.xml
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\Application NGIE-TEC.exe.manifest
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\Application NGIE-TEC.application
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\Application NGIE-TEC.exe
+C:\Users\Corentin.B\Documents\GitHub\AppliLourdeNGIE-TEC\obj\Release\Application NGIE-TEC.pdb

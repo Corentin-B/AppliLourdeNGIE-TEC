@@ -1,8 +1,5 @@
-﻿using Microsoft.Build.Tasks.Deployment.Bootstrapper;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -30,29 +27,32 @@ namespace ApplicationLourde
         //LOGIN
         private void Btn_login_Click(object sender, EventArgs e)
         {
-            Btn_login.Enabled = false;
-            textBox_user.Enabled = false;
-            textBox_password.Enabled = false;
+            if (textBox_user.Text != "" && textBox_password.Text != "")
+            {
+                Btn_login.Enabled = false;
+                textBox_user.Enabled = false;
+                textBox_password.Enabled = false;
 
-            if (Login.TryLogin(textBox_user.Text, textBox_password.Text))
-            {
-                label_connexion.Text = "En Ligne";
-                label_connexion.ForeColor = System.Drawing.Color.Green;
-                Btn_gestionclientcom.Enabled = true;
-                Btn_ordonnancementprod.Enabled = true;
-                Btn_planprod.Enabled = true;
+                if (Login.TryLogin(textBox_user.Text, textBox_password.Text))
+                {
+                    label_connexion.Text = "En Ligne";
+                    label_connexion.ForeColor = System.Drawing.Color.Green;
+                    Btn_gestionclientcom.Enabled = true;
+                    Btn_ordonnancementprod.Enabled = true;
+                    Btn_planprod.Enabled = true;
+                }
+                else
+                {
+                    label_connexion.Text = "Erreur";
+                    label_connexion.ForeColor = System.Drawing.Color.Red;
+                    textBox_user.Clear();
+                    textBox_password.Clear();
+                    Btn_login.Enabled = true;
+                    textBox_user.Enabled = true;
+                    textBox_password.Enabled = true;
+                }
+                label_connexion.Refresh();
             }
-            else
-            {
-                label_connexion.Text = "Erreur";
-                label_connexion.ForeColor = System.Drawing.Color.Red;
-                textBox_user.Clear();
-                textBox_password.Clear();
-                Btn_login.Enabled = true;
-                textBox_user.Enabled = true;
-                textBox_password.Enabled = true;
-            }
-            label_connexion.Refresh();
         }
 
         //CLIENT

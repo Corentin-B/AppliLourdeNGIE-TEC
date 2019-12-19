@@ -8,13 +8,13 @@
 
             string responseAPI = AppelAPI.Client();
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -24,13 +24,13 @@
 
             string responseAPI = AppelAPI.Listplanprod();
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -40,13 +40,13 @@
 
             string responseAPI = AppelAPI.Ordoprod();
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -56,13 +56,13 @@
 
             string responseAPI = AppelAPI.Commandes(client);
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -72,13 +72,13 @@
 
             string responseAPI = AppelAPI.Factures();
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -88,13 +88,13 @@
 
             string responseAPI = AppelAPI.FacturesPaye(client);
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -104,13 +104,13 @@
 
             string responseAPI = AppelAPI.ChangePlanprod(prod, plan);
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -120,13 +120,13 @@
 
             string responseAPI = AppelAPI.StartProd(prod);
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
 
@@ -136,13 +136,13 @@
 
             string responseAPI = AppelAPI.StopProd(prod);
 
-            if (responseAPI != null)
+            if (responseAPI == "Error")
             {
-                return responseAPI;
+                return "Error";
             }
             else
             {
-                return "Error";
+                return responseAPI;
             }
         }
     }
